@@ -1,0 +1,12 @@
+{% extends "notes/base.html" %}
+
+{% block title %} Note {{ note.id }}
+{% endblock %}
+
+{% block body %}
+<a href="{% url 'notes:list' %}">Go back to list</a>
+<h2>
+    {{ note.title }}
+</h2>
+{{ note.body }}
+{% endblock %}

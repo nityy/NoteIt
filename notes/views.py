@@ -1,8 +1,12 @@
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
+from django.views.generic import ListView, DetailView
+from notes.models import Note
 # Create your views here.
 
 
-def index(request):
-    return HttpResponse("welcome")
+class NoteListView(ListView):
+    model = Note
+    context_object_name = 'notes'
+
+
+class NoteDetailView(DetailView):
+    model = Note
