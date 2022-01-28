@@ -1,10 +1,8 @@
 from django.views.generic import ListView, DetailView, View
 from notes.models import Note
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from notes.forms import NoteForm
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-# Create your views here.
+from django.contrib import messages
 
 
 class NoteListView(ListView):
@@ -25,4 +23,7 @@ class NoteAddView(View):
         f = NoteForm(request.POST)
         if f.is_valid():
             f.save()
-            return HttpResponseRedirect(reverse("notes:list"))
+            messages.success(request, 'Note successfully saved.')
+            return redirect("notes:list")
+        else:
+            return render(request, 'notes/note_new.html', {'form': f})
