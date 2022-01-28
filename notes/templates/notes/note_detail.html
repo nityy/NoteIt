@@ -1,10 +1,13 @@
 {% extends "notes/base.html" %}
 
-{% block title %} Note {{ note.id }}
+{% block title %} Note {{ note.title }}
 {% endblock %}
 
 {% block body %}
-<a href="{% url 'notes:list' %}">Go back to list</a>
+<a href="{% url 'notes:list' %}">&larr; All Notes</a>
+<p><a href="{% url 'notes:update' note.pk %}">Edit</a> |
+    <a href="{% url 'notes:delete' note.pk %}">Delete</a>
+</p>
 <h2>
     {{ note.title }}
 </h2>

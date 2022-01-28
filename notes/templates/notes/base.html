@@ -5,9 +5,19 @@
     <title>
         {% block title %}{% endblock %}
     </title>
+    <style>
+        body {
+            font-family: Inter, Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
 
 <body>
+    <p>
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </p>
     {% block body %}{% endblock %}
 </body>
 

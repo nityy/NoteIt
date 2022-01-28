@@ -1,18 +1,15 @@
 {% extends "notes/base.html" %}
 {% load crispy_forms_tags %}
-{% block title %} Add a Note
+{% block title %} Confirm Note Deletion
 {% endblock %}
 
 {% block body %}
-<h1>
-    Add Note
-</h1>
 <form action="" method="post">
     {% csrf_token %}
-    <table>
-        {{ form|crispy }}
-    </table>
-    <input type="submit" value="Save">
+    <p>Are you sure you want to delete "{{ object }}" note?</p>
+    {{ form|crispy }}
+    <input type="submit" value="Yes">
+
 
 </form>
 {% endblock %}

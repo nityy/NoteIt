@@ -7,9 +7,6 @@
 <h1>
     All Notes ({{ notes | length }})
 </h1>
-{% for message in messages %}
-{{ message }}
-{% endfor %}
 <ul>
     {% for note in notes %}
     <li> <a href="{% url 'notes:detail' note.id %}"> {{ note.title }} </a> </li>
