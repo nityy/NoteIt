@@ -4,12 +4,15 @@
 {% endblock %}
 
 {% block body %}
-<a href="{% url 'notes:list' %}">&larr; All Notes</a>
-<p><a href="{% url 'notes:update' note.pk %}">Edit</a> |
-    <a href="{% url 'notes:delete' note.pk %}">Delete</a>
-</p>
-<h2>
-    {{ note.title }}
-</h2>
-{{ note.body }}
-{% endblock %}
+<a href="{% url 'notes:list' %}">
+    << All Notes</a>
+        <div id="note">
+            <p><a href="{% url 'notes:update' note.pk %}">Edit</a> |
+                <a href="{% url 'notes:delete' note.pk %}">Delete</a>
+            </p>
+            <h2>
+                {{ note.title }}
+            </h2>
+            {{ note.body }}
+        </div>
+        {% endblock %}

@@ -9,7 +9,6 @@
     <p>Are you sure you want to delete "{{ object }}" note?</p>
     {{ form|crispy }}
     <input type="submit" value="Yes">
-
-
+    <input type="button" value="Cancel" onclick="location.href = '{% url 'notes:detail' note.pk %}'; return false;">
 </form>
 {% endblock %}

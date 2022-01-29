@@ -1,0 +1,17 @@
+#outer {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+#note {
+    padding: 20px;
+}
+
+.cancel {
+    display: inline;
+}

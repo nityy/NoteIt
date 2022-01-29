@@ -7,4 +7,4 @@ A simple, personal notes app written in Python. Currently single-user.
 - Multiple users
 - Tags, colors, URLs (bookmarks)
 - Better UI?
-- Migrate to MySQL
+- Migrate away from SQLite

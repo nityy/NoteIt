@@ -13,6 +13,6 @@
         {{ form|crispy }}
     </table>
     <input type="submit" value="Update">
-
+    <input type="button" value="Cancel" onclick="location.href = '{% url 'notes:detail' note.pk %}'; return false;">
 </form>
 {% endblock %}
