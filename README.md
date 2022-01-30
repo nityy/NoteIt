@@ -35,3 +35,6 @@ You can [try the public demo.](https://wkinzu.pythonanywhere.com/)
      python manage.py runserver
      ```
      Open `127.0.0.1:8000` in your browser
+
+---
+The favicon was generated using Twemoji licensed under CC-BY 4.0
