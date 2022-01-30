@@ -1,7 +1,7 @@
 #outer {
-    max-width: 800px;
+    max-width: 500px;
     margin: auto;
-    padding: 20px;
+    padding: 35px;
 }
 
 body {
@@ -12,10 +12,15 @@ body {
     padding: 20px;
 }
 
-.cancel {
-    display: inline;
+#del {
+    padding-top: 40px;
 }
 
 #regst {
     padding-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding-top: 80px;
 }
