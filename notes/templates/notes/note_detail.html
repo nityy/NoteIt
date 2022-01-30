@@ -4,20 +4,21 @@
 {% endblock %}
 
 {% block body %}
-<a href="{% url 'notes:list' %}">
-    << All Notes</a>
-        <div id="note">
-            <p><a href="{% url 'notes:update' note.pk %}">Edit</a> |
-                <a href="{% url 'notes:delete' note.pk %}">Delete</a>
-            </p>
-            <h2>
-                {{ note.title }}
-            </h2>
-            {% if note.link %}
-            <p>
-                <a href="{{ note.link }}">{{ note.link }}</a>
-            </p>
-            {% endif %}
-            {{ note.body|linebreaksbr|urlize }}
-        </div>
-        {% endblock %}
+<p><a href="{% url 'notes:list' %}">
+        << All Notes</a>
+</p>
+<div id="note">
+    <p><a href="{% url 'notes:update' note.pk %}">Edit</a> |
+        <a href="{% url 'notes:delete' note.pk %}">Delete</a>
+    </p>
+    <h2>
+        {{ note.title }}
+    </h2>
+    {% if note.link %}
+    <p>
+        <a href="{{ note.link }}">{{ note.link }}</a>
+    </p>
+    {% endif %}
+    {{ note.body|linebreaksbr|urlize }}
+</div>
+{% endblock %}

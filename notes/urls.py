@@ -1,5 +1,5 @@
 from django.urls import path
-from notes.views import NoteDeleteView, NoteDetailView, NoteListView, NoteAddView, NoteUpdateView
+from notes.views import NoteDeleteView, NoteDetailView, NoteListView, NoteAddView, NoteUpdateView, RegisterView
 
 app_name = "notes"
 urlpatterns = [
@@ -7,5 +7,6 @@ urlpatterns = [
     path('<int:pk>/', NoteDetailView.as_view(), name='detail'),
     path('new/', NoteAddView.as_view(), name='add'),
     path('<int:pk>/edit', NoteUpdateView.as_view(), name='update'),
-    path('<int:pk>/delete', NoteDeleteView.as_view(), name='delete')
+    path('<int:pk>/delete', NoteDeleteView.as_view(), name='delete'),
+    path('accounts/register/', RegisterView.as_view(), name='register')
 ]

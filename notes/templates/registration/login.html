@@ -5,16 +5,12 @@
 
 {% block body %}
 {% load crispy_forms_tags %}
-<!-- {% if form.errors %}
-<div class="alert alert-danger" role="alert">
-    Your username and password didn't match. Please try again.
-</div>
-{% endif %} -->
-
 <form action="{% url 'login' %}" method="post">
     {% csrf_token %}
     {{ form|crispy }}
-    <input type="submit" value="Log in">
+    <input type="submit" value="Log in" class="btn btn-primary">
     <input type="hidden" name="next" value="{{ next }}">
 </form>
+<div id="regst">Don't have an account? <a href="{% url 'notes:register' %}">Register</a>
+</div>
 {% endblock %}

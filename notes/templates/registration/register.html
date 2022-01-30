@@ -1,0 +1,15 @@
+{% extends "notes/base.html" %}
+
+{% block title %} Register
+{% endblock %}
+
+{% block body %}
+{% load crispy_forms_tags %}
+<form action="{% url 'notes:register' %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Register" class="btn btn-primary">
+</form>
+<div id="regst">Already have an account? <a href="{% url 'login' %}">Log in</a>
+</div>
+{% endblock %}

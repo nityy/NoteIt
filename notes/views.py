@@ -1,9 +1,11 @@
-from django.views.generic import ListView, DetailView
-from notes.models import Note
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.views.generic import DetailView, ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+
+from notes.models import Note
 
 
 class NoteListView(LoginRequiredMixin, ListView):
@@ -42,18 +44,9 @@ class NoteUpdateView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('notes:detail', kwargs={'pk': self.object.pk})
 
-# Using generic editing views above
-#
-# class NoteAddView(View):
-#     def get(self, request):
-#         f = NoteForm()
-#         return render(request, 'notes/note_new.html', {'form': f})
 
-#     def post(self, request):
-#         f = NoteForm(request.POST)
-#         if f.is_valid():
-#             f.save()
-#             messages.success(request, 'Note successfully saved.')
-#             return redirect("notes:list")
-#         else:
-#             return render(request, 'notes/note_new.html', {'form': f})
+class RegisterView(SuccessMessageMixin, CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/register.html'
+    success_message = "Registration Successful"

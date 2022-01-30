@@ -15,7 +15,13 @@
 
 <body>
     <div id="outer">
-        {% for message in messages %}
+        <p>
+            {% if user.is_authenticated %}
+            Hi {{ user.username }},
+            <a href="{% url 'logout' %}">Log out</a>
+            {% endif %}
+            {% for message in messages %}
+        </p>
         <div class="alert alert-success" role="alert">
             {{ message }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

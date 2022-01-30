@@ -15,3 +15,7 @@ body {
 .cancel {
     display: inline;
 }
+
+#regst {
+    padding-top: 10px;
+}
