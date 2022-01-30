@@ -18,6 +18,6 @@
                 <a href="{{ note.link }}">{{ note.link }}</a>
             </p>
             {% endif %}
-            {{ note.body|linebreaksbr }}
+            {{ note.body|linebreaksbr|urlize }}
         </div>
         {% endblock %}
