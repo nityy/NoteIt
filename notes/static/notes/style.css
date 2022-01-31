@@ -22,5 +22,8 @@ body {
 
 footer {
     text-align: center;
-    padding-top: 80px;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    margin-bottom: 1em;
 }
