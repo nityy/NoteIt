@@ -4,13 +4,14 @@ A simple, personal notes app written in Python.
 Meant to be a CRUD demonstration. Uses SQLite.
 You can [try the public demo.](https://wkinzu.pythonanywhere.com/)
 
-## Future
+## Roadmap
 
-- Notebooks (collections)
-- Created, Last Updated
-- Markdown
-- Multiple users
-- Tags, colors
+- [ ] Notebooks (collections)
+- [ ] Created, Last Updated
+- [ ] Markdown
+- [ ] Multiple users
+- [ ] Tags, colors
+- [ ] UI improvments
 
 ## Run locally
 
@@ -22,9 +23,9 @@ You can [try the public demo.](https://wkinzu.pythonanywhere.com/)
      source venv/bin/activate
      pip install -r requirements.txt
      ```
-2. Generate a random Django secret key and fill it in `sample.env` and rename the file to `.env`
+2. Generate a random Django secret key and write it to `.env`
      ```
-     python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+     echo "SECRET_KEY='$(python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')'" > .env
      ```
 3. Apply Migrations (create database)
      ```
