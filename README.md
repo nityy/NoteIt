@@ -2,7 +2,7 @@
 
 A simple, personal notes app written in Python.
 Meant to be a CRUD demonstration. Uses SQLite.
-You can [try the public demo.](https://wkinzu.pythonanywhere.com/)
+
 
 ## Roadmap
 
